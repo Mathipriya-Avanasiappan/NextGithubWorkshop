@@ -1,0 +1,16 @@
+name: Mathi Composite Workflow
+on:
+  push:
+    branches: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: code checkout
+        uses: actions/checkout@v4
+      - name: Set up python
+        uses: ./.github/actions/setup-python-env
+        with:
+          python-version: '3.11'
+          requirements-path: 'requirements.txt'
+          
